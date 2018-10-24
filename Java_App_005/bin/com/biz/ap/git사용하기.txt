@@ -1,0 +1,85 @@
+git-scm.com 파일다운로드 받아서 설치
+
+Git bash here라는 명령이 새로 만들어 진다.
+github에 등록할 프로젝트 폴더에서 
+마우스 우클릭 한다음 Git bash here 들어간다.
+
+< git-hub 올리기 준비 >
+1. git init : 내 프로젝트를 git 올리겠다.
+
+2. 사용자 등록
+-- 프로젝트마다 등록을 해야 하고
+git config user.name 본인id
+git config user.email 본인email
+
+혼자사용하는 컴퓨터에선느 사용자 등록을 global하며
+global로 등록하면 모든 프로젝트에서 공통으로 
+정보를 사용하게 된다.
+-- 한번만 등록하면 모든 프로젝트에서 사용가능
+git config --global user.name 본인id
+git config --global user.email 본인email
+
+3. github.com 사이트에서 회원가입 후 로그인 하고
+New repository(리포지토리 : 저장소) 선택해서
+등록 할 프로젝트 이름 입력하고 create repository 한다.
+
+4. Git bash here 창에서 
+	vi README.md
+	
+	README.md 파일은 git-hub에서 내 프로젝트에서 소개하는 내용이 들어있는 파일
+	
+5. git 올리기 시도
+	가. 현재 폴더의 모든 파일을 등록
+		git add . 
+	나. 등록 정보 설정
+		git commit -m '처음올리기'
+	다. 원격저장소 연결
+		git remote add origin https://github.com/kyeongeun25/myproject.git
+	라. 원격저장소에 파일 보내기
+		git push -u origin master
+		
+6. 편집 후 프로젝트 다시 올리기
+	git add .
+	git commit -m '편집연습'
+	git push -u origin master
+	
+7. 내 프로젝트를 다운로드 받기
+	git clone https://github.com/kyeongeun25/myproject.git
+	
+8. 원격저장소(git-hub)의 프로젝트 삭제하기
+	가. 먼저 로컬폴더의 .git 을 삭제해야 한다.
+		Git bash here로 들어가서
+		rm .git -rf 명령으로 정보 삭제
+		
+	나. git-hub 프로젝트에서 setting 메뉴로 들어가서
+		화면 맨 아래 Delete repository를 선택하고 프로젝트 명을 입력하면 삭제 할 수 있다.
+		
+vi 에디터는 UNIX나 Linux 운영체제에서 메모장처럼
+Text File을 작성, 편집하는 용도인데
+메모장과는 비교 할 수 없을 정도로 기능 뛰어난 에디터다.
+
+Linux를 공부하면 반드시 익혀야 되는 에디터
+
+vi 에디터는 "명령모드", "편집모드" 두가지 상태가 있다.
+최초 실행을 하면 "명령모드"가 되고 
+이 상태에서는 저장, 끝내기, 편집모드 들어가기 등을 실행 할 수 있다.
+
+"편집모드"에서는 내용의 작성, 편집, 삭제등을 할 수 있다.
+"편집모드"에서 "명령모드"로 바꿀 때 아무데서나 ESC 키를 누르면 된다.
+"명령모드"에서 "편집모드"로 바꿀 때는 영문자 i를 누르면 된다.
+혹시 영문자 i가 작동이 안되면 ESC키를 몇번 누르면 작동된다.
+"명령모드"에서 ':q'를 누르면 vi 에디터가 종료
+						만약에 작성, 편집 중인 내용을 저장하지 않고
+						':q'를 누르면 종료가 안된다.
+						강제로 종료하려면 ':q!'
+						
+				  ':w'를 누르면 현재 작성, 편집 중인 내용을 저장
+				  ':q!'를 누르면 저장하지 않고 종료
+				  ':wq'를 누르면 저장하고 종료
+
+Linux 명령
+	ls : 현재 폴더 내의 파일들 목록 보는 명령
+	ls -al : ls명령의 확장
+	명령의 일부를 입력하고 tab키를 누르면 명령이나 파일이름을 자동으로 완성해준다.
+	
+	
